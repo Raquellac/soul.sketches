@@ -1,0 +1,127 @@
+/* para que os containers ocupem toda a pagina, junto ao width nos containers */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+
+.header {
+    width: auto;
+    background-color: #3f53a2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 40px;
+}
+
+.logo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-self: flex-start;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.item-menu {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+/* BANNER */
+.banner {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/banner_fonte.png);
+    background-size: cover;
+    flex-direction: column;
+    color: white;
+    height: 380px;
+}
+
+.faixa-banner {
+    background-color: #bac8f8;
+    height: 30px;
+}
+
+/* FONTES */
+
+.titulo1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #3f53a2;
+    padding-top: 50px;
+}
+
+/* para separar titulos */
+/* <hr style="color:3f53a2"> */
+
+.titulo2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.corpo-texto {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.texto-footer {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+
+/* CONTAINERS */
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #b49cb4; */
+    padding: 10px 40px;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 35px;
+    margin-top: 20px;
+}
+
+.card-criatividade {
+    background-image: url(img/card_criatividade.png);
+    height: 380px;
+    width: 295px;
+}
+
+.card-sensibilidade {
+    background-image: url(img/card_sensibilidade.png);
+    height: 380px;
+    width: 295px;
+}
+
+.card-perseveranca {
+    background-image: url(img/card_perseveranca.png);
+    height: 380px;
+    width: 295px;
+}
