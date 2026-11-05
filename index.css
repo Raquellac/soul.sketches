@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    padding: 10px 40px;
+    padding: 10px 50px;
 }
 
 .logo {
@@ -30,7 +30,7 @@ body {
 .menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 45px;
 }
 
 .item-menu {
@@ -55,7 +55,7 @@ body {
 }
 
 .faixa-banner {
-    background-color: #bac8f8;
+    background-color: #e2e8fd;
     height: 30px;
 }
 
@@ -66,7 +66,12 @@ body {
     font-weight: 700;
     font-size: 30px;
     color: #3f53a2;
-    padding-top: 50px;
+    padding-top: 40px;
+    margin-left: 10px;
+}
+
+.titulo1-2 {
+    margin-left: 50px;
 }
 
 /* para separar titulos */
@@ -75,13 +80,24 @@ body {
 .titulo2 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
+    /* padding-top: 30px; */
+    /* margin-left: 50px; */
+    color: #1a2a6b;
 }
 
 .corpo-texto {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
+    padding-top: 20px;
+    /* margin-left: 50px; */
+    color: #1a2a6b;
+    text-align: justify;
+}
+
+.corpo-texto-2 {
+    margin-bottom   : 28px;
 }
 
 .texto-footer {
@@ -93,19 +109,22 @@ body {
 
 /* CONTAINERS */
 
-.container-principal {
+/* ÁREA --- VALORES DA ARTE */
+
+.container-valores {
     display: flex;
     flex-direction: column;
-    /* background-color: #b49cb4; */
-    padding: 10px 40px;
+    background-color: white;
+    padding: 10px 50px;
+    width: auto;
 }
 
 .container-cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 35px;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .card-criatividade {
@@ -125,3 +144,38 @@ body {
     height: 380px;
     width: 295px;
 }
+
+/* ÁREA --- POR QUE CRIAR? */
+
+.container-porque {
+    background-color: #e2e8fd;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.container-porque2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.porque-texto {
+    /* background-color: aqua; */
+    width: 45%;
+    align-items: flex-start;
+    /* width: auto; */
+    /* margin-left: 20px; */
+}
+
+.porque-img {
+    background-image: url(img/pintura_corpo.png);
+    width: 540px;
+    height: auto;
+    /* margin-right: 20px; */
+}
+
+/*  */
