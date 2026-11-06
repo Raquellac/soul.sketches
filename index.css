@@ -61,7 +61,7 @@ body {
 
 /* FONTES */
 
-.titulo1 {
+.titulo1{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -81,8 +81,6 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 22px;
-    /* padding-top: 30px; */
-    /* margin-left: 50px; */
     color: #1a2a6b;
 }
 
@@ -91,7 +89,6 @@ body {
     font-weight: 500;
     font-size: 18px;
     padding-top: 20px;
-    /* margin-left: 50px; */
     color: #1a2a6b;
     text-align: justify;
 }
@@ -190,6 +187,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .cards-como {
@@ -225,4 +224,48 @@ body {
     display: flex;
     flex-direction: column;
     width: 67%;
+}
+
+/* ÁREA - QUEM SOU EU? */
+
+.container-autora {
+    background-color: #e2e8fd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: auto;
+}
+
+.container-autora-2 {
+    /* background-color: mediumslateblue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+}
+
+.foto {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.foto-texto {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+}
+
+.eu-agora {
+    background-image: url(img/eu.png);
+    height: 260px;
+    width: 260px;
+}
+
+.eu-crianca {
+    background-image: url(img/eu_crianca_atu.png);
+    height: 260px;
+    width: 260px;
 }
