@@ -164,18 +164,65 @@ body {
 }
 
 .porque-texto {
-    /* background-color: aqua; */
     width: 45%;
     align-items: flex-start;
-    /* width: auto; */
-    /* margin-left: 20px; */
 }
 
 .porque-img {
     background-image: url(img/pintura_corpo.png);
     width: 540px;
     height: auto;
-    /* margin-right: 20px; */
 }
 
-/*  */
+/* ÁREA - COMO COMEÇAR? */
+
+.container-como {
+    /* background-color: rgb(77, 0, 128); */
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 10px 40px;
+}
+
+.container-como-2 {
+    /* background-color: rgb(154, 78, 226); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+
+.cards-como {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.card-definicao {
+    background-image: url(img/card_definicao.png);
+    height: 278px;
+    width: 342px;
+    margin-top: 40px;
+}
+
+.card-intuito {
+    background-image: url(img/card_intuito.png);
+    height: 280px;
+    width: 342px;
+    margin-top: 30px;
+}
+
+.card-beneficio {
+    background-image: url(img/card_benef.png);
+    height: 278px;
+    width: 342px;
+    margin-top: 30px;
+}
+
+.texto-como {
+    /* background-color: rgb(190, 178, 255); */
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+}
