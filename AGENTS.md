@@ -12,6 +12,8 @@ Tecnologias utilizadas: VS Code, HTML, JavaScript, CSS, API web-data-viz junto d
 
 npm i: Instala as dependências do projeto.
 npm start: Inicia o servidor.
+git add .: adiciona alterações
+git commit -m "feat(login): adiciona validação de email" (mensagem de acordo com os padrões em "Padrões de Desenvolvimento")
 
 ## Arquitetura
 
@@ -24,14 +26,15 @@ O fluxo de dados começa no front-end, fluindo pelo routes, controllers, models 
 
 ## Padrões de desenvolvimento
 
--input: ipt_ (ter essa abreviação como base para representar outros valores de campo)
+-input: ipt_ (ter essa abreviação como base para outras abreviações)
 -utilizar o padrão de escrita Snake Case (snake_case)
 -funções devem ser nomeadas com verbos
--padrão de commits baseado neste guia: feat (Nova funcionalidade), fix (Correção de erro), docs (Documentação), style (Estilo e formatação), perf (Melhoria de performance), refactor (Refatoração), test (Testes), chore (Manutenção). Exemplo: feat(login): adiciona validação de e-mail. A descrição deve ser curta, objetiva e específica.
+-padrão de commits baseado neste guia: feat (Nova funcionalidade), fix (Correção de erro), docs (Documentação), style (Estilo e formatação), perf (Melhoria de performance), refactor (Refatoração), test (Testes), chore (Manutenção). Exemplo: "feat(login): adiciona validação de e-mail". A descrição deve ser curta, objetiva e específica.
+-os commits devem ser realizados dentro da branch 'dev', NUNCA na 'main'
 
 ## Cuidados e restrições
 
-Nunca altere qualquer coisa relacionada a estrutura do site e a maneira em que estou programando-o, em todas as alterações que você fizer deixe comentarios explicando o que você fez e não faça algo fora do planejado, atenção ao fazer alterações em que o codígo esteja pronto, não esqueça de seguir o padrão que estabeleci para a realização do codígo. Os commits das alterações realizadas devem ser feitas na branch nomeada revisao, separada da main.
+Nunca altere qualquer coisa relacionada a estrutura do site e a maneira em que estou programando-o, em todas as alterações que você fizer deixe comentarios explicando o que você fez e não faça algo fora do planejado, atenção ao fazer alterações em que o codígo esteja pronto, não esqueça de seguir o padrão que estabeleci para a realização do codígo. Os commits das alterações realizadas devem ser feitas na branch nomeada dev, separada da main.
 
 
 ## Regra geral: 

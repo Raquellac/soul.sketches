@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* HEADER */
+
+.header {
+    width: auto;
+    /* background-color: #3f53a2; */
+    background: linear-gradient(to right,#3a4d9b,#6176ce);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 40px;
+    border-bottom: 2px solid #e2e8fd;
+}
+
+.logo-site {
+    background-image: url(../img/logo_site.png);
+    height: 58px;
+    width: 240px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.item-menu {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+}
+
+/* BANNER */
+.fundo {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/banner_blueperiod_art.png);
+    background-size: cover;
+    height: 585px;
+    flex-direction: column;
+    color: white;
+    /* background-image: linear-gradient(to right, rgba(16, 8, 61, 0.164), rgba(16, 8, 61, 0.164)), url(../img/__\ blue\ period.jpg); */
+}
+
+/* FONTES */
+
+.titulo1{
+    font-family: "Redaction 50", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #3f53a2;
+    padding-top: 40px;
+    margin-left: 10px;
+}
+
+.titulo2 {
+    font-family: "Redaction 50", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #1a2a6b;
+}
+
+.corpo-texto {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 20px;
+    color: #1a2a6b;
+    text-align: justify;
+}
+
+/* FOOTER */
+
+.footer {
+    width: auto;
+    background: linear-gradient(to right,#3a4d9b,#6176ce);
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: flow;
+
+    padding: 25px 40px;
+    border-top: 1px solid white;
+}
+
+.footer-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ARTES - CARACTERES */
+
+.arte1 {
+    font-family: monospace; /* Mantém os caracteres com largura uniforme. */
+    font-size: 12px; /* Diminui o tamanho dos caracteres. */
+    line-height: 1; /* Aproxima as linhas verticalmente. */
+    white-space: pre; /* Preserva todos os espaços e quebras de linha. */
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    color: #6176ce;
+    font-weight: bolder;
+    cursor: default;
+}
+
+.container-arte2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.arte2 {
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1;
+    white-space: pre;
+    margin: 0;
+    color: #3f53a2;
+    font-weight: bolder;
+    cursor: default;
+}
+
+
+/* CAMPOS */
