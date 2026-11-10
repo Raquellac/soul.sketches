@@ -66,7 +66,7 @@ body {
 .titulo2 {
     font-family: "Redaction 50", sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 24px;
     color: #1a2a6b;
 }
 
@@ -74,8 +74,9 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    padding-top: 20px;
-    color: #1a2a6b;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: #3f53a2;
     text-align: justify;
 }
 
@@ -86,8 +87,8 @@ body {
     background: linear-gradient(to right,#3a4d9b,#6176ce);
 
     display: flex;
-    justify-content: space-between;
     flex-direction: flow;
+    justify-content: space-between;
 
     padding: 25px 40px;
     border-top: 1px solid white;
@@ -134,3 +135,92 @@ body {
 
 
 /* CAMPOS */
+.card {
+    background-color: #e2e8fd;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #6176ce;
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px 0;
+}
+
+.formulario {
+    display: flex;
+    height: 90%;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1a2a6b;
+    margin-left: 10px;
+}
+
+.formulario input {
+    border: 2px solid #8d9acf;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0;
+}
+
+input::placeholder {
+    font-family: "Poppins", sans-serif;
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.formulario select {
+    border: 2px solid #8d9acf;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0;
+}
+
+select::placeholder {
+    font-family: "Poppins", sans-serif;
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5px 0;
+}
+
+.botao {
+    cursor: pointer;
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    background-color: #6176ce;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #6176ce;
+    display: flex;
+    align-self: center;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Soul.Sketches</title>
+    <link rel="icon" href="../icon/icon.png">
 
     <link rel="stylesheet" href="../css/login.css">
     
@@ -16,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- HEADER -->
+
     <div class="header">
         <div class="logo-site"></div>
         
@@ -29,45 +32,51 @@
             <div class="item-menu" style="cursor: pointer;">Login</div>
         </div>
     </div>
-    <div class="fundo"></div>
-    <div class="footer">
-        <div class="footer-2" style="display: flex; align-items: flex-start;">
-            <div class="logo-site"></div>
-            <div class="titulo2" style="color: white; margin-top: 40px; margin-left: 5px; font-size: 24px;">Se interessou por arte?</div>
-            <div class="corpo-texto" style="color: white; margin-top: -12px; margin-left: 5px; font-size: 16px;">
-                Faça <a><b><u>Login</u></b></a> para acessar mais conteúdos<br>sobre o tema e participar de quizes!
-            </div>
-        </div>
-        <div class="footer-2" style="display: flex; align-items: flex-end;">
-            <div class="container-arte2">
-                <div class="arte2" style="color: white; font-size: 5px; font-weight: bolder; margin-right: -120px; margin-bottom: 10px;">
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀
-⠐⠶⣿⣿⡿⠖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣿⣿⣇⡀⠀⠀⠀⠀
-⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⢿⣿⣿⡿⠟⠋⠉⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣠⣿⣿⣿⣿⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⡤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⣿⣿⣿⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣆⣀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⡿⠉⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+
+    <!-- BANNER -->
+
+    <div class="fundo">
+        <div class="card">
+            <div class="titulo2" style="margin-bottom: 10px;">Olá de novo!</div>
+            <div class="formulario">
+                <div class="campo">
+                    <label for="ipt_user">Usuário:</label>
+                    <input type="text" id="ipt_user" placeholder="raquellac">
                 </div>
-            </div>
-            <div class="corpo-texto" style="font-size: 16px; color: white; margin-bottom: -20px;">
-                Não tem uma conta?
-            </div>
-            <div class="corpo-texto" style="font-size: 22px; color: white;">
-                <a><b><u>Cadastre-se</u></b></a> aqui!
+                <div class="campo">
+                    <label for="ipt_senha">Senha:</label>
+                    <input type="password" id="ipt_senha" placeholder="******">
+                </div>
+                <button class="botao" onclick="entrar()">Entrar</button><br>
+                <a>Não tem uma conta?<b><u>Cadastrar</u></b></a>
             </div>
         </div>
-    </div> 
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer" style="margin-top: -20px;">
+        <div class="container-arte2">
+            <div class="arte2" style="color: white; font-size: 7px; font-weight: bolder; margin-right: -80px; margin-bottom: -20px; margin-top: -20px;">
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡀⢢⣄⠀⢰⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠀⣤⠈⣁⣘⣛⠳⠄⠃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠰⣦⡀⣿⣿⠟⠳⣄⠀⠆⠄⡲⠿⢿⡿⠋⠀⠀⠀⠀⢀⡠⠶⠛⠉⠁⠀⠀⠈⢣
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⠘⣿⡇⢻⡇⠀⠀⠸⡆⠀⢀⡠⠖⠁⠀⠀⠀⠀⡠⠖⠉⠀⠀⠀⠀⠀⠀⠀⠀⢠
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⡢⢈⠳⢀⠻⣄⠀⠀⠁⠈⠀⠉⣿⡟⠃⡀⠐⠁⠀⠀⠀⠀⠀⢀⠖⠐⠀⠀⠀⡌
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⡋⠁⠀⢀⡀⠅⠈⢡⠀⠤⠶⠶⠚⢉⠄⠈⠀⠀⠀⠀⠀⠀⠀⠀⠘⣦⣀⢀⡠⠎⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠛⠉⢁⠃⡜⢀⡇⡴⠺⣇⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀
+⠀⣠⠶⠛⠛⠛⠲⠤⣄⠀⠀⠀⠀⠀⠀⠀⣾⣿⣷⠎⠀⠉⠉⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣼⠃⠀⠀⠀⠀⠀⠀⠀⠑⢦⠀⠀⠀⠀⠀⠘⠋⠀⠀⠀⠀⢠⡇⠀⠀⠀⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡇⠀⠀⣠⠖⢤⠀⠀⠀⠀⠀⠑⡄⠀⠀⠀⠀⠀⡆⢄⠀⢀⠎⠀⢀⠀⠐⠀⠁⠀⣀⣀⠀⠑⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢣⠀⠀⠣⠀⠀⡆⠀⠀⠀⠀⠀⠘⡀⠀⠀⠀⠀⠈⢒⠕⠓⠒⠉⠀⠀⠀⠀⠀⠌⠀⠀⠃⢀⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠣⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⡠⠂⠡⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡠⠔⠁⢀⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢺⠀⠠⠐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡃⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Soul.Sketches</title>
+    <link rel="icon" href="../icon/icon.png">
+
+    <link rel="stylesheet" href="../css/login.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+
+    <div class="header">
+        <div class="logo-site"></div>
+        
+        <div class="menu">
+            <div class="item-menu" style="cursor: pointer;">Home</div>
+            <div class="item-menu" style="cursor: default;">|</div>
+            <div class="item-menu" style="cursor: pointer;">Sobre Arte</div>
+            <div class="item-menu" style="cursor: default;">|</div>
+            <div class="item-menu" style="cursor: pointer;">Autora</div>
+            <div class="item-menu" style="cursor: default;">|</div>
+            <div class="item-menu" style="cursor: pointer;">Login</div>
+        </div>
+    </div>
+
+    <!-- BANNER -->
+
+    <div class="fundo">
+        <div class="card">
+            <div class="titulo2" style="margin-bottom: 15px;">Sua jornada criativa começa aqui!</div>
+            <!-- <div class="corpo-texto">Insira seus dados nos campos abaixo</div> -->
+            <div class="formulario">
+                <div class="campo">
+                    <label for="ipt_email">E-mail:</label>
+                    <input type="text" id="ipt_email" placeholder="raquellac@email.com">
+                </div>
+                <div class="campo">
+                    <label for="ipt_user">Usuário:</label>
+                    <input type="text" id="ipt_user" placeholder="raquellac">
+                </div>
+                <div class="campo">
+                    <label for="ipt_senha">Senha:</label>
+                    <input type="password" id="ipt_senha" placeholder="******">
+                </div>
+                <div class="campo">
+                    <label for="ipt_senha_confirmacao">Confirmação de senha:</label>
+                    <input type="password" id="ipt_senha_confirmacao" placeholder="******">
+                </div>
+                <div class="campo">
+                    <label for="sel_exp">Defina seu contato com arte:</label>
+                    <select id="sel_exp">
+                        <option value="#" disabled selected>Selecione uma opção</option>
+                        <option value="3">É um hábito</option>
+                        <option value="2">Eventual</option>
+                        <option value="1">Raro</option>
+                    </select>
+                </div>
+                <button class="botao" onclick="cadastrar()">Cadastrar</button><br>
+                <a>Já tem uma conta?<b><u>Entrar</u></b></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer" style="margin-top: -20px;">
+        <div class="container-arte2">
+            <div class="arte2" style="color: white; font-size: 7px; font-weight: bolder; margin-right: -80px; margin-bottom: -20px; margin-top: -20px;">
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡀⢢⣄⠀⢰⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠀⣤⠈⣁⣘⣛⠳⠄⠃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠣⠰⣦⡀⣿⣿⠟⠳⣄⠀⠆⠄⡲⠿⢿⡿⠋⠀⠀⠀⠀⢀⡠⠶⠛⠉⠁⠀⠀⠈⢣
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⠘⣿⡇⢻⡇⠀⠀⠸⡆⠀⢀⡠⠖⠁⠀⠀⠀⠀⡠⠖⠉⠀⠀⠀⠀⠀⠀⠀⠀⢠
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⡢⢈⠳⢀⠻⣄⠀⠀⠁⠈⠀⠉⣿⡟⠃⡀⠐⠁⠀⠀⠀⠀⠀⢀⠖⠐⠀⠀⠀⡌
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⡋⠁⠀⢀⡀⠅⠈⢡⠀⠤⠶⠶⠚⢉⠄⠈⠀⠀⠀⠀⠀⠀⠀⠀⠘⣦⣀⢀⡠⠎⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠛⠉⢁⠃⡜⢀⡇⡴⠺⣇⠠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀
+⠀⣠⠶⠛⠛⠛⠲⠤⣄⠀⠀⠀⠀⠀⠀⠀⣾⣿⣷⠎⠀⠉⠉⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣼⠃⠀⠀⠀⠀⠀⠀⠀⠑⢦⠀⠀⠀⠀⠀⠘⠋⠀⠀⠀⠀⢠⡇⠀⠀⠀⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡇⠀⠀⣠⠖⢤⠀⠀⠀⠀⠀⠑⡄⠀⠀⠀⠀⠀⡆⢄⠀⢀⠎⠀⢀⠀⠐⠀⠁⠀⣀⣀⠀⠑⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢣⠀⠀⠣⠀⠀⡆⠀⠀⠀⠀⠀⠘⡀⠀⠀⠀⠀⠈⢒⠕⠓⠒⠉⠀⠀⠀⠀⠀⠌⠀⠀⠃⢀⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠣⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⡠⠂⠡⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡠⠔⠁⢀⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢺⠀⠠⠐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡃⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            </div>
+        </div>
+    </div>
+</body>
+</html>
