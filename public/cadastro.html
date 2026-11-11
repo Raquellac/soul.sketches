@@ -57,8 +57,8 @@
                     <input type="password" id="ipt_senha_confirmacao" placeholder="******">
                 </div>
                 <div class="campo">
-                    <label for="sel_exp">Selecione a cor que você mais gosta:</label>
-                    <select id="sel_exp">
+                    <label for="sel_cor">Selecione a cor que você mais gosta:</label>
+                    <select id="sel_cor">
                         <option value="#" disabled selected>Selecione uma opção</option>
                         <option style="color: rgb(185, 1, 1)">Vermelho</option>
                         <option style="color: rgb(207, 93, 0)">Laranja</option>
@@ -101,3 +101,36 @@
     </div>
 </body>
 </html>
+<script>
+    //vetor para verificação de caracteres especiais
+    let listaEspecial = [
+    "!", "@", "#", "$", "%", "&", "*", "(", ")",
+    "-", "_", "+", "=", "[", "]", "{", "}", "/",
+    "\\", "|", ":", ";", "\"", "'", "<", ">", ",",
+    ".", "?", "~", "^"
+    ];
+
+    function cadastrar(){
+        //trim() retira espaços antes e após a string
+        
+        //variaveis - apelido para valores inseridos pelo usuário
+        let email = ipt_email.value.toLowerCase().trim(); //toLowerCase para salvar o email como min por padrão
+        let user = ipt_user.value.trim();
+        let senha = ipt_senha.value.trim();
+        let confirmacaoSenha = ipt_senha_confirmacao.value.trim();
+        let cor = sel_cor.value;
+
+        //variaveis - verificações e comparações
+        //email
+        let indexArroba = email.indexOf('@'); //procura por "@"
+        let indexCom = email.indexOf('.com'); //procura por ".com"
+        //senha
+        let senhaUpper = senha.toUpperCase();
+        let senhaLower = senha.toLowerCase();
+        //confirmacao da senha
+        let confSenhaUpper = confirmacaoSenha.toUpperCase();
+        let confSenhaLower = confirmacaoSenha.toLowerCase();
+
+        
+    }
+</script>
