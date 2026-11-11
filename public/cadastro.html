@@ -23,13 +23,13 @@
         <div class="logo-site"></div>
         
         <div class="menu">
-            <div class="item-menu" style="cursor: pointer;">Home</div>
-            <div class="item-menu" style="cursor: default;">|</div>
-            <div class="item-menu" style="cursor: pointer;">Sobre Arte</div>
-            <div class="item-menu" style="cursor: default;">|</div>
-            <div class="item-menu" style="cursor: pointer;">Autora</div>
-            <div class="item-menu" style="cursor: default;">|</div>
-            <div class="item-menu" style="cursor: pointer;">Login</div>
+            <a href="index.html">Home</a>
+            <div style="cursor: default; color: white;">|</div>
+            <a href="index.html#sobre_arte">Sobre Arte</a>
+            <div style="cursor: default; color: white;">|</div>
+            <a href="index.html#autora">Autora</a>
+            <div style="cursor: default; color: white;">|</div>
+            <a href="login.html">Login</a>
         </div>
     </div>
 
@@ -57,16 +57,19 @@
                     <input type="password" id="ipt_senha_confirmacao" placeholder="******">
                 </div>
                 <div class="campo">
-                    <label for="sel_exp">Defina seu contato com arte:</label>
+                    <label for="sel_exp">Selecione a cor que você mais gosta:</label>
                     <select id="sel_exp">
                         <option value="#" disabled selected>Selecione uma opção</option>
-                        <option value="3">É um hábito</option>
-                        <option value="2">Eventual</option>
-                        <option value="1">Raro</option>
+                        <option style="color: rgb(185, 1, 1)">Vermelho</option>
+                        <option style="color: rgb(207, 93, 0)">Laranja</option>
+                        <option style="color: rgb(207, 159, 0)">Amarelo</option>
+                        <option style="color: rgb(27, 114, 0)">Verde</option>
+                        <option style="color: rgb(0, 28, 151)">Azul</option>
+                        <option style="color: rgb(100, 0, 146)">Roxo</option>
                     </select>
                 </div>
                 <button class="botao" onclick="cadastrar()">Cadastrar</button><br>
-                <a>Já tem uma conta?<b><u>Entrar</u></b></a>
+                <p style="margin-left: -5px; margin-top: -5px;">Já tem uma conta? <a href="login.html" style="margin-left: 5px;"><b><u>Entrar</u></b></a></p>
             </div>
         </div>
     </div>

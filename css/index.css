@@ -6,6 +6,11 @@ body {
 }
 
 
+/* ROLAGEM DE TELA */
+html {
+    scroll-behavior: smooth;
+} 
+
 /* HEADER */
 
 .header {
@@ -33,11 +38,13 @@ body {
     gap: 25px;
 }
 
-.item-menu {
+.menu a {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
