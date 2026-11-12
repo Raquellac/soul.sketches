@@ -394,3 +394,11 @@ html {
     font-weight: bolder;
     cursor: default;
 }
+
+/* LINKAGEM */
+a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: white;
+    display: inline;
+}

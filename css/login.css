@@ -53,9 +53,9 @@ html {
     gap: 5px;
     justify-content: center;
     align-items: center;
-    background-image: url(../img/banner_blueperiod_art.png);
+    background-image: url(../img/__\ blue\ period.jpg);
     background-size: cover;
-    height: 585px;
+    height: 650px;
     flex-direction: column;
     color: white;
     /* background-image: linear-gradient(to right, rgba(16, 8, 61, 0.164), rgba(16, 8, 61, 0.164)), url(../img/__\ blue\ period.jpg); */
@@ -241,4 +241,33 @@ p {
     color: #6176ce;
     display: flex;
     align-self: center;
+}
+
+small {
+    color: #6176ce;
+    font-size: x-small;
+    font-family: "Poppins", sans-serif; 
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+/* estilização */
+.tooltip-texto {
+    display: none;
+    position: absolute;
+    background-color: #3a4d9b;
+    color: white;
+    width: 400px;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+/*determinando a forma que ela aparece na tela*/
+.tooltip:hover .tooltip-texto {
+    display: block;
 }

@@ -36,7 +36,7 @@
     <!-- BANNER -->
 
     <div class="fundo">
-        <div class="card">
+        <div class="card" style="margin-top: -50px;">
             <div class="titulo2" style="margin-bottom: 15px;">Sua jornada criativa começa aqui!</div>
             <!-- <div class="corpo-texto">Insira seus dados nos campos abaixo</div> -->
             <div class="formulario">
@@ -50,11 +50,16 @@
                 </div>
                 <div class="campo">
                     <label for="ipt_senha">Senha:</label>
-                    <input type="password" id="ipt_senha" placeholder="******">
+                    <input type="password" id="ipt_senha" placeholder="********" maxlength="8">
+                    <!--tooltip-->
+                    <p style="display: flex; align-self: flex-start; font-size: 13px; margin-top: 0px; margin-left: 10px;">Passe o mouse aqui: <b class="tooltip" style="margin-left: 5px;">Regras de senha
+                    <span class="tooltip-texto"><b>A senha precisa conter:</b> 8 dígitos, pelo menos uma letra maiúscula e minúscula, além de um caracter especial.</span>
+                    </b>
+                    </p>
                 </div>
-                <div class="campo">
+                <div class="campo" style="margin-top: -10px;">
                     <label for="ipt_senha_confirmacao">Confirmação de senha:</label>
-                    <input type="password" id="ipt_senha_confirmacao" placeholder="******">
+                    <input type="password" id="ipt_senha_confirmacao" placeholder="********" maxlength="8">
                 </div>
                 <div class="campo">
                     <label for="sel_cor">Selecione a cor que você mais gosta:</label>
@@ -102,6 +107,7 @@
 </body>
 </html>
 <script>
+
     //vetor para verificação de caracteres especiais
     let listaEspecial = [
     "!", "@", "#", "$", "%", "&", "*", "(", ")",
@@ -125,12 +131,14 @@
         let indexArroba = email.indexOf('@'); //procura por "@"
         let indexCom = email.indexOf('.com'); //procura por ".com"
         //senha
+        let tamanhoSenha = 8;
         let senhaUpper = senha.toUpperCase();
         let senhaLower = senha.toLowerCase();
         //confirmacao da senha
+        let tamanhoConfSenha = 8;
         let confSenhaUpper = confirmacaoSenha.toUpperCase();
         let confSenhaLower = confirmacaoSenha.toLowerCase();
-
+        //
         
     }
 </script>
