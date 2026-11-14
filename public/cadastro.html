@@ -19,7 +19,8 @@
 <body>
     <!-- HEADER -->
 
-    <div class="header">
+<div class="banner">
+    <div class="header" style="margin-bottom: 70px;">
         <div class="logo-site"></div>
         
         <div class="menu">
@@ -33,55 +34,62 @@
         </div>
     </div>
 
-    <!-- BANNER -->
+    <!-- CONTEUDO -->
 
-    <div class="fundo">
-        <div class="card" style="margin-top: -50px;">
-            <div class="titulo2" style="margin-bottom: 15px;">Sua jornada criativa começa aqui!</div>
-            <!-- <div class="corpo-texto">Insira seus dados nos campos abaixo</div> -->
-            <div class="formulario">
-                <div class="campo">
-                    <label for="ipt_email">E-mail:</label>
-                    <input type="text" id="ipt_email" placeholder="raquellac@email.com">
-                </div>
-                <div class="campo">
-                    <label for="ipt_user">Usuário:</label>
-                    <input type="text" id="ipt_user" placeholder="raquellac">
-                </div>
-                <div class="campo">
-                    <label for="ipt_senha">Senha:</label>
-                    <input type="password" id="ipt_senha" placeholder="********" maxlength="8">
-                    <!--tooltip-->
-                    <p style="display: flex; align-self: flex-start; font-size: 13px; margin-top: 0px; margin-left: 10px;">Passe o mouse aqui: <b class="tooltip" style="margin-left: 5px;">Regras de senha
-                    <span class="tooltip-texto"><b>A senha precisa conter:</b> 8 dígitos, pelo menos uma letra maiúscula e minúscula, além de um caracter especial.</span>
-                    </b>
-                    </p>
-                </div>
-                <div class="campo" style="margin-top: -10px;">
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card" style="margin-top: -50px;">
+                <div class="titulo2" style="margin-bottom: 15px;">Sua jornada criativa começa aqui!</div>
+                <!-- <div class="corpo-texto">Insira seus dados nos campos abaixo</div> -->
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="ipt_email">E-mail:</label>
+                        <input type="text" id="ipt_email" placeholder="raquellac@email.com">
+                    </div>
+                    <div class="campo">
+                        <label for="ipt_user">Usuário:</label>
+                        <input type="text" id="ipt_user" placeholder="raquellac">
+                    </div>
+                    <div class="campo">
+                        <label for="ipt_senha">Senha:</label>
+                        <input type="password" id="ipt_senha" placeholder="******">
+                    </div>
+                    <div class="campo">
                     <label for="ipt_senha_confirmacao">Confirmação de senha:</label>
-                    <input type="password" id="ipt_senha_confirmacao" placeholder="********" maxlength="8">
+                    <input type="password" id="ipt_senha_confirmacao" placeholder="******">
+                    <!--tooltip-->
+                        <p style="display: flex; align-self: flex-start; font-size: 13px; margin-top: 0px; margin-left: 10px;">Passe o mouse aqui: <b class="tooltip" style="margin-left: 5px;">Regras de senha
+                        <span class="tooltip-texto"><b>A senha precisa conter:</b> pelo menos 6 dígitos, uma letra maiúscula e minúscula, além de um caracter especial.</span>
+                        </b>
+                        </p>
+                    </div>
+                    <div class="campo">
+                        <label for="sel_cor">Selecione a cor que você mais gosta:</label>
+                        <select id="sel_cor">
+                            <option value="#" disabled selected>Selecione uma opção</option>
+                            <option style="color: rgb(185, 1, 1)">Vermelho</option>
+                            <option style="color: rgb(207, 93, 0)">Laranja</option>
+                            <option style="color: rgb(207, 159, 0)">Amarelo</option>
+                            <option style="color: rgb(27, 114, 0)">Verde</option>
+                            <option style="color: rgb(0, 28, 151)">Azul</option>
+                            <option style="color: rgb(100, 0, 146)">Roxo</option>
+                        </select>
+                    </div>
+                    <button class="botao" onclick="cadastrar()">Cadastrar</button><br>
+                    <p style="margin-left: -5px; margin-top: -5px;">Já tem uma conta? <a href="login.html" style="margin-left: 5px;"><b><u>Entrar</u></b></a></p>
                 </div>
-                <div class="campo">
-                    <label for="sel_cor">Selecione a cor que você mais gosta:</label>
-                    <select id="sel_cor">
-                        <option value="#" disabled selected>Selecione uma opção</option>
-                        <option style="color: rgb(185, 1, 1)">Vermelho</option>
-                        <option style="color: rgb(207, 93, 0)">Laranja</option>
-                        <option style="color: rgb(207, 159, 0)">Amarelo</option>
-                        <option style="color: rgb(27, 114, 0)">Verde</option>
-                        <option style="color: rgb(0, 28, 151)">Azul</option>
-                        <option style="color: rgb(100, 0, 146)">Roxo</option>
-                    </select>
-                </div>
-                <button class="botao" onclick="cadastrar()">Cadastrar</button><br>
-                <p style="margin-left: -5px; margin-top: -5px;">Já tem uma conta? <a href="login.html" style="margin-left: 5px;"><b><u>Entrar</u></b></a></p>
             </div>
         </div>
     </div>
 
     <!-- FOOTER -->
 
-    <div class="footer" style="margin-top: -20px;">
+    <div class="footer" style="margin-top: 20px;">
         <div class="container-arte2">
             <div class="arte2" style="color: white; font-size: 7px; font-weight: bolder; margin-right: -80px; margin-bottom: -20px; margin-top: -20px;">
                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -104,11 +112,12 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
 <script>
 
-    //vetor para verificação de caracteres especiais
+    //vetor para verificacao de caracteres especiais
     let listaEspecial = [
     "!", "@", "#", "$", "%", "&", "*", "(", ")",
     "-", "_", "+", "=", "[", "]", "{", "}", "/",
@@ -117,29 +126,122 @@
     ];
 
     function cadastrar(){
-        //trim() retira espaços antes e após a string
         
-        //variaveis - apelido para valores inseridos pelo usuário
-        let email = ipt_email.value.toLowerCase().trim(); //toLowerCase para salvar o email como min por padrão
+        //trim() retira espacos antes e apos a string
+        
+        //VARIAVEIS DE ENTRADA - apelido para valores inseridos pelo usuario
+        
+        let email = ipt_email.value.toLowerCase().trim(); //salvar o email como minusculo (padrao)
         let user = ipt_user.value.trim();
         let senha = ipt_senha.value.trim();
         let confirmacaoSenha = ipt_senha_confirmacao.value.trim();
         let cor = sel_cor.value;
 
-        //variaveis - verificações e comparações
+        //VARIAVEIS AUXILIARES - verificacoes e comparacoes
+
         //email
         let indexArroba = email.indexOf('@'); //procura por "@"
         let indexCom = email.indexOf('.com'); //procura por ".com"
+        let terminaCom = email.endsWith('.com'); //verifica final com ".com"
         //senha
-        let tamanhoSenha = 8;
+        let tamanhoMinimoSenha = 6;
         let senhaUpper = senha.toUpperCase();
         let senhaLower = senha.toLowerCase();
-        //confirmacao da senha
-        let tamanhoConfSenha = 8;
-        let confSenhaUpper = confirmacaoSenha.toUpperCase();
-        let confSenhaLower = confirmacaoSenha.toLowerCase();
         
-        //anotação: veririficação de caractere especial será feita com for
         
+        cardErro.style.display = '';
+        mensagem_erro.innerHTML = '';
+
+        //VALIDACOES
+        
+        //campos preenchidos
+
+        if (email.length == 0 || user.length == 0 || senha.length == 0 || confirmacaoSenha.length == 0) {
+
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Preencha todos os campos!)`;
+            
+            return;
+        }
+
+        if (cor == "#") {
+            
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Selecione uma cor!)`;
+            
+            return;
+        }
+
+        //EMAIL
+        
+        if (indexArroba == -1 || indexArroba == 0 || !(indexCom > indexArroba) || !terminaCom) {
+
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Email inválido!)`;
+
+            return;
+        }
+
+        //SENHA
+
+        if (senha.length < tamanhoMinimoSenha) {
+            
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Tamanho de senha inválido!)`;
+
+            return;
+        }
+
+        if (senha == senhaLower || senha == senhaUpper) {
+            
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Utilize pelo menos uma letra maiúscula e minúscula na senha!)`;
+
+            return;
+        } 
+        
+        let temCaracterEspecial = false;
+
+        for (let i = 0; i < listaEspecial.length; i++) {
+            if (senha.includes(listaEspecial[i])) {
+                temCaracterEspecial = true;
+            }
+        }
+
+        if (!temCaracterEspecial) {
+    
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (Utilize pelo menos um caractere especial na senha!)`;
+
+            return;
+        }
+        // (!) inverte o valor booleano para entrar ou nao no if
+        // assim, se for achado um caractere especial, ele sera false para o if
+
+
+        //CONFIRMACAO DA SENHA
+
+        if (!(confirmacaoSenha == senha)) {
+
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = 
+            `⚠️ Oops..! <br>
+            (As duas senhas precisam ser iguais!)`;
+
+            return;
+        }
+
     }
 </script>

@@ -9,6 +9,11 @@ html {
     scroll-behavior: smooth;
 } 
 
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
 
 /* HEADER */
 
@@ -48,6 +53,15 @@ html {
 
 
 /* BANNER */
+
+.banner {
+  /* height: var(--tamanho-banner); */
+  color: white;
+  background-image: url('../img/__\ blue\ period.jpg');
+  background-size: cover;
+  height: 700px;
+}
+
 .fundo {
     display: flex;
     gap: 5px;
@@ -142,8 +156,45 @@ html {
     cursor: default;
 }
 
+/* HMMMM */
+
+.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-size: cover;
+}
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: white;
+  color: black;
+  width: 230px;
+  position: absolute;
+  border-radius: 4px;
+  border: #4459ad 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-family: "Poppins", sans-serif;  
+  font-weight: 500;
+  font-size: 16spx;
+}
 
 /* CAMPOS */
+
 .card {
     background-color: #e2e8fd;
     width: 50%;
@@ -260,7 +311,7 @@ small {
     position: absolute;
     background-color: #3a4d9b;
     color: white;
-    width: 400px;
+    width: 300px;
     padding: 8px;
     border-radius: 5px;
     font-weight: normal;
