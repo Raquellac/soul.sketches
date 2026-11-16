@@ -17,11 +17,9 @@ function autenticar(req, res) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
-                    //ENTENDER ESTE BLOCO DE CÓDIGO - AQUI
+
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-
-                    
                             
                                 if (resultadoAutenticar.length == 1) { //achou dados e inputou
                                     res.json({
@@ -46,7 +44,6 @@ function autenticar(req, res) {
                 }
             );
 
-            //ATÉ AQUI
     }
 
 }
