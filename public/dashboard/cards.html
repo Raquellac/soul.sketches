@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="../icon/icon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Soul.Sketches</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body onload="validarSessao(), exibirMensagemPersonalizada(), atualizacaoPeriodica()">
+
+    <div class="janela">
+
+        <div class="header-left dash-header">
+            <div class="logo-site"></div>
+
+            <!-- <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div> -->
+
+            <div class="btn-nav">
+                <h3>Minha Cor</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Escolhas da Comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Simbolismos</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="dash2">
+                <div class="info-perfil">
+                    <div>
+                        <div class="foto"></div>
+                    </div>
+                    <div class="hello"> <!-- PUXAR NOME DE USUÁRIO ARMAZENADO NO NAVEGADOR -->
+                        <h3 style="color: #3f53a2; font-family: 'Poppins', sans-serif; font-weight: 600;";>Olá, <span id="b_usuario">usuário</span>!</h3>
+                    </div>
+                </div>
+                <div class="info-perfil">
+                    <div class="conteudo-perfil">
+                        <span class="corpo-texto">Sua cor escolhida foi...</span>
+                        <div class="corpo-texto" id="mensagemUsuario" style="margin-top: -20px;"></div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    // hello.innerHTML = `${b_usuario}`
+
+    //JSON para armazenas as cores e suas informações
+    let cores = {
+        "vermelho": {
+        "titulo": "Vermelho",
+        "texto": "Na arte, o vermelho é frequentemente associado à paixão, ao amor, à intensidade e à força. Sua presença transmite energia e chama a atenção, podendo representar tanto sentimentos acolhedores quanto conflitos, perigo e impulsividade.",
+        "cor": "#b50505",
+        "imagem": "../img/vermelho_art.jpg"
+        },
+        "laranja": {
+        "titulo": "Laranja",
+        "texto": "O laranja transmite entusiasmo, criatividade e vitalidade. Na arte, é utilizado para despertar sensações de calor, movimento e espontaneidade. Sua combinação entre a intensidade do vermelho e a luminosidade do amarelo cria uma atmosfera acolhedora e expressiva.",
+        "cor": "#f2680c",
+        "imagem": "../img/laranja_art.jpg"
+        },
+        "amarelo": {
+        "titulo": "Amarelo",
+        "texto": "O amarelo é frequentemente relacionado à luz, à alegria, à esperança e à criatividade. Na arte, sua luminosidade pode transmitir otimismo e leveza, além de despertar sensações de calor e movimento. Dependendo do contexto, também pode representar inquietação ou alerta.",
+        "cor": "#f7b40a",
+        "imagem": "../img/amarelo_art.jpg"
+        },
+        "verde": {
+        "titulo": "Verde",
+        "texto": "Na arte, o verde costuma representar natureza, renovação, equilíbrio e crescimento. Associado à vida e à tranquilidade, pode transmitir sensações de harmonia e esperança. Suas diferentes tonalidades também permitem explorar contrastes entre frescor, serenidade e mistério.",
+        "cor": "#03660a",
+        "imagem": "../img/verde_art.jpg"
+        },
+        "azul": {
+        "titulo": "Azul",
+        "texto": "O azul é frequentemente associado à serenidade, à introspecção, à confiança e à profundidade. Na arte, suas tonalidades podem transmitir tranquilidade e contemplação, mas também melancolia e solidão. É uma cor que permite explorar sentimentos sutis e atmosferas contemplativas.",
+        "cor": "#2c3bc7",
+        "imagem": "../img/azul_art.jpg"
+        },
+        "roxo": {
+        "titulo": "Roxo",
+        "texto": "O roxo é frequentemente relacionado à imaginação, à espiritualidade, ao mistério e à sensibilidade. Na arte, pode representar introspecção e criatividade, despertando uma atmosfera de fantasia e contemplação. Suas tonalidades também permitem expressar delicadeza, profundidade e transformação.",
+        "cor": "#7807a8",
+        "imagem": "../img/roxo_art.jpg"
+        }
+    }
+
+    function exibirMensagemPersonalizada() {
+    var nome = sessionStorage.NOME_USUARIO;
+    var cor = sessionStorage.COR_USUARIO;
+    var mensagem = cores[cor];
+
+    var elementoMensagem = document.getElementById("mensagemUsuario");
+
+    if (mensagem) {
+        elementoMensagem.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 80px;">
+        <div>
+            <h3 style="color: ${mensagem.cor};">${mensagem.titulo}</h3>
+            <p>${mensagem.texto}</p>
+        </div>
+        <img src="${mensagem.imagem}" alt="${mensagem.titulo}" style="width: fit-content; height: fit-content; border-radius: 8px; object-fit: cover;">
+    </div>
+`;
+    } else {
+        elementoMensagem.innerHTML = ``;
+    }
+}
+
+    // function exibirAquarios() {
+    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+    //         document.getElementById("cardAquarios").innerHTML += `
+    //                 <div class="card-aquario">
+    //                     <div class="title-aquario">
+    //                         <h1>${item.descricao}</h1>
+    //                     </div>
+    //                     <div class="desc-aquario">
+    //                     <div class="temperatura">
+    //                         <p id="temp_aquario_${item.id}">-°C</p>
+    //                     </div>
+    //                     <div class="cor-alerta" id="card_${item.id}"></div>
+    //                 </div>
+    //                 </div>
+    //                 `
+    //     });
+    // }
+
+console.log(b_usuario)
+
+</script>
+
+</html>
