@@ -130,6 +130,7 @@
     }
 
     function exibirMensagemPersonalizada() {
+        
     var nome = sessionStorage.NOME_USUARIO;
     var cor = sessionStorage.COR_USUARIO;
     var mensagem = cores[cor];
@@ -138,8 +139,8 @@
 
     if (mensagem) {
         elementoMensagem.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 80px;">
-        <div>
+            <div style="display: flex; align-items: center; gap: 80px;">
+            <div>
             <h3 style="color: ${mensagem.cor};">${mensagem.titulo}</h3>
             <p>${mensagem.texto}</p>
         </div>
