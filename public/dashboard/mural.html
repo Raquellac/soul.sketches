@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body onload="validarSessao(), atualizarFeed(), onloadEsconder()" style="background-color: #161618;">
 
     <div class="janela">
 
@@ -55,7 +55,7 @@
                 <h3>Simbolismos</h3>
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <div class="btn-logout" onclick="limparSessao()" style="border-radius: 50px;">
                 <h3>Sair</h3>
             </div>
 
@@ -68,78 +68,181 @@
                     <div class="titulo2">Algumas de suas interpretações</div>
                 </div>
                 <div class="cores-quadro">
-                <div class="cores" style="margin-top: 15px;">
-                    
-                    <div class="org-cores" style="display: flex; justify-content: space-between;">
-                    <div class="titulo2" style="color: #b50505">Vermelho</div>
-                        <div class="corpo-texto" style="font-size: 16px;" >
-                            Na arte, o vermelho é frequentemente associado à paixão, ao amor, à intensidade e à força. Sua presença transmite energia e chama a atenção, podendo representar tanto sentimentos acolhedores quanto conflitos, perigo e impulsividade.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/vermelho_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
+                    <div class="cores" style="margin-top: 15px;">
                         
                         <div class="org-cores" style="display: flex; justify-content: space-between;">
-                        <div class="titulo2" style="color: #f2680c">Laranja</div>
-                        <div class="corpo-texto" style="font-size: 16px;">
-                            O laranja transmite entusiasmo, criatividade e vitalidade. Na arte, é utilizado para despertar sensações de calor, movimento e espontaneidade. Sua combinação entre a intensidade do vermelho e a luminosidade do amarelo cria uma atmosfera acolhedora e expressiva.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/laranja_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
-                </div>
-                <div class="cores" style="margin-top: 15px;">
-                    
-                    <div class="org-cores" style="display: flex; justify-content: space-between;">
-                    <div class="titulo2" style="color: #f7b40a">Amarelo</div>
-                        <div class="corpo-texto" style="font-size: 16px;" >
-                            O amarelo é frequentemente relacionado à luz, à alegria, à esperança e à criatividade. Na arte, sua luminosidade pode transmitir otimismo e leveza, além de despertar sensações de calor e movimento. Dependendo do contexto, também pode representar inquietação ou alerta.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/amarelo_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
+                        <div class="titulo2" style="color: #b50505">Vermelho</div>
+                            <div class="corpo-texto" style="font-size: 16px;" >
+                                Na arte, o vermelho é frequentemente associado à paixão, ao amor, à intensidade e à força. Sua presença transmite energia e chama a atenção, podendo representar tanto sentimentos acolhedores quanto conflitos, perigo e impulsividade.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/vermelho_art.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
+                            
+                            <div class="org-cores" style="display: flex; justify-content: space-between;">
+                            <div class="titulo2" style="color: #f2680c">Laranja</div>
+                            <div class="corpo-texto" style="font-size: 16px;">
+                                O laranja transmite entusiasmo, criatividade e vitalidade. Na arte, é utilizado para despertar sensações de calor, movimento e espontaneidade. Sua combinação entre a intensidade do vermelho e a luminosidade do amarelo cria uma atmosfera acolhedora e expressiva.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/laranja_art2.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
+                    </div>
+                    <div class="cores" style="margin-top: 15px;">
                         
                         <div class="org-cores" style="display: flex; justify-content: space-between;">
-                        <div class="titulo2" style="color: #03660a">Verde</div>
-                        <div class="corpo-texto" style="font-size: 16px;">
-                            Na arte, o verde costuma representar natureza, renovação, equilíbrio e crescimento. Associado à vida e à tranquilidade, pode transmitir sensações de harmonia e esperança. Suas diferentes tonalidades também permitem explorar contrastes entre frescor, serenidade e mistério.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/verde_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
-                </div>
-                <div class="cores" style="margin-top: 15px;">
-                    
-                    <div class="org-cores" style="display: flex; justify-content: space-between;">
-                    <div class="titulo2" style="color: #2c3bc7">Azul</div>
-                        <div class="corpo-texto" style="font-size: 16px;" >
-                            O azul é frequentemente associado à serenidade, à introspecção, à confiança e à profundidade. Na arte, suas tonalidades podem transmitir tranquilidade e contemplação, mas também melancolia e solidão. É uma cor que permite explorar sentimentos sutis e atmosferas contemplativas.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/azul_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
+                        <div class="titulo2" style="color: #f7b40a">Amarelo</div>
+                            <div class="corpo-texto" style="font-size: 16px;" >
+                                O amarelo é frequentemente relacionado à luz, à alegria, à esperança e à criatividade. Na arte, sua luminosidade pode transmitir otimismo e leveza, além de despertar sensações de calor e movimento. Dependendo do contexto, também pode representar inquietação ou alerta.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/amarelo_art.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
+                            
+                            <div class="org-cores" style="display: flex; justify-content: space-between;">
+                            <div class="titulo2" style="color: #03660a">Verde</div>
+                            <div class="corpo-texto" style="font-size: 16px;">
+                                Na arte, o verde costuma representar natureza, renovação, equilíbrio e crescimento. Associado à vida e à tranquilidade, pode transmitir sensações de harmonia e esperança. Suas diferentes tonalidades também permitem explorar contrastes entre frescor, serenidade e mistério.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/verde_art.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
+                    </div>
+                    <div class="cores" style="margin-top: 15px;">
                         
                         <div class="org-cores" style="display: flex; justify-content: space-between;">
-                        <div class="titulo2" style="color: #7807a8">Roxo</div>
-                        <div class="corpo-texto" style="font-size: 16px;">
-                            O roxo é frequentemente relacionado à imaginação, à espiritualidade, ao mistério e à sensibilidade. Na arte, pode representar introspecção e criatividade, despertando uma atmosfera de fantasia e contemplação. Suas tonalidades também permitem expressar delicadeza, profundidade e transformação.
-                        </div>
-                        <div style="display: flex; justify-content: center;">
-                            <img src="../img/roxo_art.jpg" style="height: 300px; width: 300px;">
-                        </div>
-                        </div>
+                        <div class="titulo2" style="color: #2c3bc7">Azul</div>
+                            <div class="corpo-texto" style="font-size: 16px;" >
+                                O azul é frequentemente associado à serenidade, à introspecção, à confiança e à profundidade. Na arte, suas tonalidades podem transmitir tranquilidade e contemplação, mas também melancolia e solidão. É uma cor que permite explorar sentimentos sutis e atmosferas contemplativas.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/azul_art.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
+                            
+                            <div class="org-cores" style="display: flex; justify-content: space-between;">
+                            <div class="titulo2" style="color: #7807a8">Roxo</div>
+                            <div class="corpo-texto" style="font-size: 16px;">
+                                O roxo é frequentemente relacionado à imaginação, à espiritualidade, ao mistério e à sensibilidade. Na arte, pode representar introspecção e criatividade, despertando uma atmosfera de fantasia e contemplação. Suas tonalidades também permitem expressar delicadeza, profundidade e transformação.
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <img src="../img/roxo_art.jpg" style="height: 300px; width: 300px; border-radius: 10px;">
+                            </div>
+                            </div>
                 </div>
-                </div>
+            </div>
+
+                <button onclick="iniciarForm()" class="botao" style="margin-top: 25px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
 
                 <div class="div-formulario">
                     <div class="formulario">
-                        <div class="titulo1" style="font-size: 24px; color: rgb(131, 131, 170)";>Expresse sua visão</div>
                         
+                        <div id="esconderForm" class="div-esconder">
+
+                        <div class="titulo1" style="font-size: 24px; color: rgb(131, 131, 170); margin-top: -20px;";>Expresse sua visão</div>
+                    
+                            <!-- Pergunta 1 -->
+                            <fieldset>
+                                <legend>Em geral, o quanto você se identifica?</legend>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="cor" value="1">
+                                <label>Com tudo</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="cor" value="2">
+                                <label>A maioria</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="cor" value="3">
+                                <label>Em partes</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="cor" value="4">
+                                <label>Nem um pouco</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- Pergunta 2 -->
+                            <fieldset>
+                                <legend>Qual faz sentido para você?</legend>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="1">
+                                <label>Vermelho</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="2">
+                                <label>Laranja</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="3">
+                                <label>Amarelo</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="4">
+                                <label>Verde</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="5">
+                                <label>Azul</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="sentimento" value="6">
+                                <label>Roxo</label>
+                                </div>
+                            </fieldset>
+
+                            <!-- Pergunta 3 -->
+                            <fieldset>
+                                <legend>Qual faz menos?</legend>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="1">
+                                <label>Vermelho</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="2">
+                                <label>Laranja</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="3">
+                                <label>Amarelo</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="4">
+                                <label>Verde</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="5">
+                                <label>Azul</label>
+                                </div>
+
+                                <div class="campo-formulario">
+                                <input type="radio" name="uso" value="6">
+                                <label>Roxo</label>
+                                </div>
+                            </fieldset>
+                            
+                            <button onclick="enviarForm()" class="botao" style="margin-bottom: 32px; margin-top: 0px; width: 200px; height: 40px; background-color: rgb(131, 131, 170);">Enviar Formulário</button>
+
+                        </div>
                     </div>
                 </div>
 
@@ -155,156 +258,174 @@
 
 
 </body>
-
 </html>
 
 <script>
     
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function onloadEsconder() {
 
-    function limparFormulario() {
-        document.getElementById("form_postagem").reset();
-    }
+    let esconderForm = document.getElementById("esconderForm");
 
-    function publicar() {
-        var idUsuario = sessionStorage.ID_USUARIO;
+    esconderForm.style.display = "none";
 
-        var corpo = {
-            titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
-        }
+}
 
-        fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(corpo)
-        }).then(function (resposta) {
+    //botão para aparecer o formulario
+    function iniciarForm() {
 
-            console.log("resposta: ", resposta);
+    // divSimbologia = document.getElementById("divSimbologia");
+    let esconderForm = document.getElementById("esconderForm");
 
-            if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
-                limparFormulario();
-                finalizarAguardar();
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+    // divSimbologia.style.display = "none";
+    esconderForm.style.display = "flex";
 
-        return false;
+}
 
-    }
+    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
+    // function limparFormulario() {
+    //     document.getElementById("form_postagem").reset();
+    // }
 
-    }
+    // function publicar() {
+    //     var idUsuario = sessionStorage.ID_USUARIO;
 
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function (resposta) {
+    //     var corpo = {
+    //         titulo: form_postagem.titulo.value,
+    //         descricao: form_postagem.descricao.value
+    //     }
 
-            if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
+    //     fetch(`/avisos/publicar/${idUsuario}`, {
+    //         method: "post",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(corpo)
+    //     }).then(function (resposta) {
 
-    function atualizarFeed() {
-        fetch("/avisos/listar").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    var feed = document.getElementById("feed_container");
-                    var mensagem = document.createElement("span");
-                    mensagem.innerHTML = "Nenhum resultado encontrado."
-                    feed.appendChild(mensagem);
-                    throw "Nenhum resultado encontrado!!";
-                }
+    //         console.log("resposta: ", resposta);
 
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+    //         if (resposta.ok) {
+    //             window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+    //             window.location = "/dashboard/mural.html";
+    //             limparFormulario();
+    //             finalizarAguardar();
+    //         } else if (resposta.status == 404) {
+    //             window.alert("Deu 404!");
+    //         } else {
+    //             throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+    //         finalizarAguardar();
+    //     });
 
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
+    //     return false;
 
-                        // criando e manipulando elementos do HTML via JavaScript
-                        var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
+    // }
+
+    // function editar(idAviso) {
+    //     sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
+    //     console.log("cliquei em editar - " + idAviso);
+    //     window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+    //     window.location = "/dashboard/edicao-aviso.html"
+
+    // }
+
+    // function deletar(idAviso) {
+    //     console.log("Criar função de apagar post escolhido - ID" + idAviso);
+    //     fetch(`/avisos/deletar/${idAviso}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     }).then(function (resposta) {
+
+    //         if (resposta.ok) {
+    //             window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+    //             window.location = "/dashboard/mural.html"
+    //         } else if (resposta.status == 404) {
+    //             window.alert("Deu 404!");
+    //         } else {
+    //             throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+    //     });
+    // }
+
+    // function atualizarFeed() {
+    //     fetch("/avisos/listar").then(function (resposta) {
+    //         if (resposta.ok) {
+    //             if (resposta.status == 204) {
+    //                 var feed = document.getElementById("feed_container");
+    //                 var mensagem = document.createElement("span");
+    //                 mensagem.innerHTML = "Nenhum resultado encontrado."
+    //                 feed.appendChild(mensagem);
+    //                 throw "Nenhum resultado encontrado!!";
+    //             }
+
+    //             resposta.json().then(function (resposta) {
+    //                 console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+    //                 var feed = document.getElementById("feed_container");
+    //                 feed.innerHTML = "";
+    //                 for (let i = 0; i < resposta.length; i++) {
+    //                     var publicacao = resposta[i];
+
+    //                     // criando e manipulando elementos do HTML via JavaScript
+    //                     var divPublicacao = document.createElement("div");
+    //                     var spanID = document.createElement("span");
+    //                     var spanTitulo = document.createElement("span");
+    //                     var spanNome = document.createElement("span");
+    //                     var divDescricao = document.createElement("div");
+    //                     var divButtons = document.createElement("div");
+    //                     var btnEditar = document.createElement("button");
+    //                     var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
+    //                     spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+    //                     spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+    //                     spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+    //                     divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+    //                     btnEditar.innerHTML = "Editar";
+    //                     btnDeletar.innerHTML = "Deletar";
 
-                        divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
+    //                     divPublicacao.className = "publicacao";
+    //                     spanTitulo.id = "inputNumero" + publicacao.idAviso;
+    //                     spanNome.className = "publicacao-nome";
+    //                     spanTitulo.className = "publicacao-titulo";
+    //                     divDescricao.className = "publicacao-descricao";
 
-                        divButtons.className = "div-buttons"
+    //                     divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+    //                     btnEditar.className = "publicacao-btn-editar"
+    //                     btnEditar.id = "btnEditar" + publicacao.idAviso;
+    //                     btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+    //                     btnDeletar.className = "publicacao-btn-editar"
+    //                     btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+    //                     btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
-                        feed.appendChild(divPublicacao);
-                    }
+    //                     divPublicacao.appendChild(spanID);
+    //                     divPublicacao.appendChild(spanNome);
+    //                     divPublicacao.appendChild(spanTitulo);
+    //                     divPublicacao.appendChild(divDescricao);
+    //                     divPublicacao.appendChild(divButtons);
+    //                     divButtons.appendChild(btnEditar);
+    //                     divButtons.appendChild(btnDeletar);
+    //                     feed.appendChild(divPublicacao);
+    //                 }
 
-                    finalizarAguardar();
-                });
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            finalizarAguardar();
-        });
-    }
+    //                 finalizarAguardar();
+    //             });
+    //         } else {
+    //             throw ('Houve um erro na API!');
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.error(resposta);
+    //         finalizarAguardar();
+    //     });
+    // }
 
 </script>

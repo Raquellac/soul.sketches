@@ -135,10 +135,17 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                
+                cardErro.style.display = "block";
+                    mensagem_erro.innerHTML = 
+                    `⚠️ Oops..! <br>
+                    (Usuário e/ou senha inválido(s)!)`;
 
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
+
+                    return;
                 });
             }
 
