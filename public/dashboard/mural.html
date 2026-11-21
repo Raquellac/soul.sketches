@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>Simbolismos | Soul.Sketches</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
@@ -27,7 +27,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed(), onloadEsconder()" style="background-color: #161618;">
+<body onload="onloadEsconder()" style="background-color: #161618;">
+<!-- validarSessao(), atualizarFeed() - estavam acima -->
 
     <div class="janela">
 
@@ -61,7 +62,7 @@
 
         </div>
 
-        <div class="dash">
+        <div class="dash1">
             <div class="dash3">
                 <div style="margin-left: 30px;">
                     <div class="titulo1" style="color: rgb(131, 131, 170)">Simbolismos das Cores</div>
@@ -138,10 +139,11 @@
 
                 <button onclick="iniciarForm()" class="botao" style="margin-top: 25px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
 
+                <div id="esconderForm" class="div-esconder">
                 <div class="div-formulario">
                     <div class="formulario">
                         
-                        <div id="esconderForm" class="div-esconder">
+                        <div class="estilo-form">
 
                         <div class="titulo1" style="font-size: 24px; color: rgb(131, 131, 170); margin-top: -20px;";>Expresse sua visão</div>
                     
@@ -240,12 +242,12 @@
                                 </div>
                             </fieldset>
                             
-                            <button onclick="enviarForm()" class="botao" style="margin-bottom: 32px; margin-top: 0px; width: 200px; height: 40px; background-color: rgb(131, 131, 170);">Enviar Formulário</button>
+                            <button onclick="enviarForm()" class="botao" style="margin-bottom: -15px; margin-top: 5px; width: 200px; height: 40px; background-color: rgb(131, 131, 170);">Enviar Formulário</button>
 
                         </div>
                     </div>
                 </div>
-
+                </div>
             </div>
 
             
