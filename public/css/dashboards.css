@@ -275,6 +275,15 @@ fieldset legend {
   color: #20205e;
 }
 
+.msgNull-estilo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(189, 26, 26);
+  margin-top: 0px;
+  margin-bottom: -10px;
+}
+
 .formulario label {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;

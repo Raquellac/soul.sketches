@@ -137,7 +137,7 @@
                 </div>
             </div>
 
-                <button onclick="iniciarForm()" class="botao" style="margin-top: 25px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
+                <button onclick="iniciarForm()" class="botao" style="margin-top: 10px; margin-bottom: 10px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
 
                 <div id="esconderForm" class="div-esconder">
                 <div class="div-formulario">
@@ -148,100 +148,102 @@
                         <div class="titulo1" style="font-size: 24px; color: rgb(131, 131, 170); margin-top: -20px;";>Expresse sua visão</div>
                     
                             <!-- Pergunta 1 -->
-                            <fieldset>
+                            <fieldset id="fieldsetGeral">
                                 <legend>Em geral, o quanto você se identifica?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="cor" value="1">
+                                <input type="radio" name="geral">
                                 <label>Com tudo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="cor" value="2">
+                                <input type="radio" name="geral">
                                 <label>A maioria</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="cor" value="3">
+                                <input type="radio" name="geral">
                                 <label>Em partes</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="cor" value="4">
+                                <input type="radio" name="geral">
                                 <label>Nem um pouco</label>
                                 </div>
                             </fieldset>
 
                             <!-- Pergunta 2 -->
-                            <fieldset>
-                                <legend>Qual faz sentido para você?</legend>
+                            <fieldset id="fieldsetMais">
+                                <legend>Qual faz mais sentido para você?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="1">
+                                <input type="radio" name="mais">
                                 <label>Vermelho</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="2">
+                                <input type="radio" name="mais">
                                 <label>Laranja</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="3">
+                                <input type="radio" name="mais">
                                 <label>Amarelo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="4">
+                                <input type="radio" name="mais">
                                 <label>Verde</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="5">
+                                <input type="radio" name="mais">
                                 <label>Azul</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="sentimento" value="6">
+                                <input type="radio" name="mais">
                                 <label>Roxo</label>
                                 </div>
                             </fieldset>
 
                             <!-- Pergunta 3 -->
-                            <fieldset>
+                            <fieldset id="fieldsetMenos">
                                 <legend>Qual faz menos?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="1">
+                                <input type="radio" name="menos">
                                 <label>Vermelho</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="2">
+                                <input type="radio" name="menos">
                                 <label>Laranja</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="3">
+                                <input type="radio" name="menos">
                                 <label>Amarelo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="4">
+                                <input type="radio" name="menos">
                                 <label>Verde</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="5">
+                                <input type="radio" name="menos">
                                 <label>Azul</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="uso" value="6">
+                                <input type="radio" name="menos">
                                 <label>Roxo</label>
                                 </div>
                             </fieldset>
                             
+                            <div id="msgNull" class="msgNull-estilo"></div>
+
                             <button onclick="enviarForm()" class="botao" style="margin-bottom: -15px; margin-top: 5px; width: 200px; height: 40px; background-color: rgb(131, 131, 170);">Enviar Formulário</button>
 
                         </div>
@@ -282,6 +284,91 @@
     esconderForm.style.display = "flex";
 
 }
+
+    function enviarForm(){
+
+        //pergunta 1
+
+        let geralSelecionado = document.querySelector(
+        'input[name="geral"]:checked'
+        );
+
+        if (geralSelecionado == null) {
+        msgNull.innerHTML = `⚠️ Oops! Preeencha todos os campos!`;
+        return;
+        }
+
+        let geral = geralSelecionado.value
+
+        //pergunta 2
+
+        let maisSelecionado = document.querySelector(
+        'input[name="mais"]:checked'
+        );
+
+        if (maisSelecionado == null) {
+        msgNull.innerHTML = `⚠️ Oops! Preeencha todos os campos!`;
+        return;
+        }
+
+        let mais = maisSelecionado.value
+
+        //pergunta 3
+
+        let menosSelecionado = document.querySelector(
+        'input[name="menos"]:checked'
+        );
+
+        if (menosSelecionado == null) {
+        msgNull.innerHTML = `⚠️ Oops! Preeencha todos os campos!`;
+        return;
+        }
+
+        let menos = menosSelecionado.value
+
+        //enviar para o BD
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            emailServer: email,
+            userServer: user,
+            senhaServer: senha,
+            corServer: cor
+        }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+            cardErro.style.display = "block";
+
+            mensagem_erro.innerHTML =
+                "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "2000");
+
+            limparFormulario();
+            finalizarAguardar();
+            } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+
+    }
 
     // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
