@@ -137,7 +137,7 @@
                 </div>
             </div>
 
-                <button onclick="iniciarForm()" class="botao" style="margin-top: 10px; margin-bottom: 10px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
+                <button onclick="iniciarForm()"  class="botao" style="margin-top: 10px; margin-bottom: 10px; width: 320px; height: 40px;background-color: rgb(131, 131, 170);">E o que VOCÊ acha disso tudo?</button>
 
                 <div id="esconderForm" class="div-esconder">
                 <div class="div-formulario">
@@ -152,23 +152,23 @@
                                 <legend>Em geral, o quanto você se identifica?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="geral">
+                                <input type="radio" name="geral" value="tudo">
                                 <label>Com tudo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="geral">
+                                <input type="radio" name="geral" value="maioria">
                                 <label>A maioria</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="geral">
+                                <input type="radio" name="geral" value="partes">
                                 <label>Em partes</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="geral">
-                                <label>Nem um pouco</label>
+                                <input type="radio" name="geral" value="nada">
+                                <label>Com nada</label>
                                 </div>
                             </fieldset>
 
@@ -177,32 +177,32 @@
                                 <legend>Qual faz mais sentido para você?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="vermelho">
                                 <label>Vermelho</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="laranja">
                                 <label>Laranja</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="amarelo">
                                 <label>Amarelo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="verde">
                                 <label>Verde</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="azul">
                                 <label>Azul</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="mais">
+                                <input type="radio" name="mais" value="roxo">
                                 <label>Roxo</label>
                                 </div>
                             </fieldset>
@@ -212,37 +212,38 @@
                                 <legend>Qual faz menos?</legend>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="vermelho">
                                 <label>Vermelho</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="laranja">
                                 <label>Laranja</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="amarelo">
                                 <label>Amarelo</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="verde">
                                 <label>Verde</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="azul">
                                 <label>Azul</label>
                                 </div>
 
                                 <div class="campo-formulario">
-                                <input type="radio" name="menos">
+                                <input type="radio" name="menos" value="roxo">
                                 <label>Roxo</label>
                                 </div>
                             </fieldset>
                             
                             <div id="msgNull" class="msgNull-estilo"></div>
+                            <div id="msgEnvio" class="msgEnvio-estilo"></div>
 
                             <button onclick="enviarForm()" class="botao" style="margin-bottom: -15px; margin-top: 5px; width: 200px; height: 40px; background-color: rgb(131, 131, 170);">Enviar Formulário</button>
 
@@ -251,16 +252,8 @@
                 </div>
                 </div>
             </div>
-
-            
         </div>
-
-
     </div>
-
-
-
-
 </body>
 </html>
 
@@ -279,9 +272,10 @@
 
     // divSimbologia = document.getElementById("divSimbologia");
     let esconderForm = document.getElementById("esconderForm");
-
     // divSimbologia.style.display = "none";
     esconderForm.style.display = "flex";
+    // faz a tela descer até o formulário
+    esconderForm.scrollIntoView({ behavior: "smooth", block: "start" });
 
 }
 
@@ -326,9 +320,13 @@
 
         let menos = menosSelecionado.value
 
+        //pegando o id do usuário para preencher a devida fk_usuario
+
+        let fk_usuario = sessionStorage.ID_USUARIO;
+
         //enviar para o BD
 
-        fetch("/usuarios/cadastrar", {
+        fetch("/formularios/enviar", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
@@ -336,33 +334,37 @@
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            emailServer: email,
-            userServer: user,
-            senhaServer: senha,
-            corServer: cor
+            geralServer: geral,
+            maisServer: mais,
+            menosServer: menos,
+            fk_usuarioServer: fk_usuario
         }),
         })
         .then(function (resposta) {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-            cardErro.style.display = "block";
 
-            mensagem_erro.innerHTML =
-                "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-            setTimeout(() => {
-                window.location = "login.html";
-            }, "2000");
-
-            limparFormulario();
-            finalizarAguardar();
+            msgNull.innerHTML = "";
+            msgEnvio.innerHTML =
+                "Envio realizado com sucesso!";
+                 // após 2 segundos, esconde o formulário
+                setTimeout(function () {
+                    document.getElementById("esconderForm").style.display = "none";
+                    }, 2000);
             } else {
-            throw "Houve um erro ao tentar realizar o cadastro!";
+            throw "Houve um erro ao tentar realizar o envio!";
             }
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
+
+            msgEnvio.innerHTML = "";
+            msgNull.innerHTML =
+            "Você só pode preencher o formulário uma vez!";
+            setTimeout(function () {
+                document.getElementById("esconderForm").style.display = "none";
+                }, 2000);
             // finalizarAguardar();
         });
 

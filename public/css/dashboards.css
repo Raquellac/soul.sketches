@@ -12,7 +12,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 30px;
-    color: #3f53a2;
+    color: rgb(131, 131, 170);
 }
 
 .titulo2 {
@@ -196,7 +196,8 @@ body {
   height: fit-content;
   display: flex;
   align-self: center;
-  padding: 20px;
+  padding: 25px;
+  gap: 10px;
   border-radius: 10px;
   flex-direction: column;
   justify-content: space-between;
@@ -284,6 +285,15 @@ fieldset legend {
   margin-bottom: -10px;
 }
 
+.msgEnvio-estilo{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(10, 126, 77);
+  margin-top: 0px;
+  margin-bottom: -10px;
+}
+
 .formulario label {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -363,7 +373,7 @@ select::placeholder {
 
 .foto {
   /* background-color: blueviolet; */
-  background-image: url(../img/perfil.jpg);
+  background-image: url(../img/perfil2.jpg);
   height: 70px;
   width: 70px;
   border-radius: 50%;
@@ -699,4 +709,57 @@ canvas {
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+/* ÁREA DA DASHBOARD */
+
+/* .container-info{
+  background-color: #9ccc65;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+/* } i don't really need it, because i'm using dash3, actually... let's try it */
+
+.info-direction{
+  /* background-color: burlywood; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 20px; */
+}
+
+.kpi{
+  background-color: white;
+  border: 1px solid rgb(131, 131, 170);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-weight:500; */
+  /* font-size: 16px; */
+  color:#29296b;
+  height: 40px;
+  width: 260px;
+}
+
+.chart-container{
+  background-color: white;
+  height: 300px;
+  width: 43%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(160, 160, 165);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo-grafico{
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  color: rgb(131, 131, 170);
 }
