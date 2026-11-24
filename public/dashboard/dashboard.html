@@ -31,7 +31,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body onload="buscarEscolhas()">
+<body onload="buscarEscolhas(), buscarIdentificacoes()">
 
     <div class="janela">
         <div class="header-left">
@@ -75,16 +75,20 @@
         <div class="dash">
             <div class="dash3" style="gap: 30px;">
                 <div class="titulo1" style="font-size: 22px;">Escolhas da Comunidade</div>
+                <!-- SELECTS - adicionar aqui os selects que serão feitos pelo usuário -->
                 <!-- <div class="container-info"> -->
                     <div class="info-direction">
                         <div class="kpi">
-                            <div class="titulo-grafico">AZUL</div>
+                            <div class="titulo-grafico">Mais escolhida</div>
+                        </div>
+                        <div class="kpi" style="margin-left: -20px;">
+                            <div class="titulo-grafico">Total de escolhas</div>
+                        </div>
+                        <div class="kpi" style="margin-right: -20px;">
+                            <div class="titulo-grafico">Total de respostas</div>
                         </div>
                         <div class="kpi">
-                            <div class="titulo-grafico">LARANJA</div>
-                        </div>
-                        <div class="kpi">
-                            <div class="titulo-grafico">20</div>
+                            <div class="titulo-grafico">Maior identificação</div>
                         </div>
                     </div>
                     <div class="info-direction">
@@ -146,10 +150,25 @@
     }
     });
 
+    // Mapa com o nome de cada cor e o hexadecimal correspondente, usado para colorir as fatias dos graficos
+    let cores = {
+        "vermelho": "#d63131",
+        "laranja": "#f37e30",
+        "amarelo": "#f1c85e",
+        "verde": "#2ba345",
+        "azul": "#5764db",
+        "roxo": "#9730c4"
+    };
+
+    // Função que retorna o hexadecimal da cor informada pelo nome, usada nas fatias dos graficos
+    function obterCor(corNome) {
+        return cores[corNome] || corNome;
+    }
+
     function atualizarGraficoEscolhas(dados) {
     graficoEscolha.data.labels = dados.map(function (item) { return item.cor; });
     graficoEscolha.data.datasets[0].data = dados.map(function (item) { return item.percentual; });
-    graficoEscolha.data.datasets[0].backgroundColor = dados.map(function (item) { return item.cor; });
+    graficoEscolha.data.datasets[0].backgroundColor = dados.map(function (item) { return obterCor(item.cor); });
     graficoEscolha.update();
 }
 
@@ -158,10 +177,26 @@
         .then(function (resposta) { return resposta.json(); })
         .then(function (dados) { atualizarGraficoEscolhas(dados); })
         .catch(function (error) { console.error(`Erro na obtenção das escolhas: ${error.message}`); });
-}
+    }
+
+    // Atualiza o grafico de identificacao com os dados recebidos
+    function atualizarGraficoIdentificacoes(dados) {
+        graficoIdentificacao.data.labels = dados.map(function (item) { return item.cor; });
+        graficoIdentificacao.data.datasets[0].data = dados.map(function (item) { return item.percentual; });
+        graficoIdentificacao.data.datasets[0].backgroundColor = dados.map(function (item) { return obterCor(item.cor); });
+        graficoIdentificacao.update();
+    }
+
+    // Busca as identificacoes por cor e atualiza o grafico de identificacao
+    function buscarIdentificacoes() {
+        fetch('/dashboard/graficoIdentificacao')
+            .then(function (resposta) { return resposta.json(); })
+            .then(function (dados) { atualizarGraficoIdentificacoes(dados); })
+            .catch(function (error) { console.error(`Erro na obtenção das identificacoes: ${error.message}`); });
+    }
 
     // new Chart(chartEscolha, {
-    //     type: 'doughnut',
+    //     type: 'line',
     //     data: {
     //         labels: ['GELADEIRA-1',
     //             'ARMAZEM-1',
@@ -171,7 +206,7 @@
     //         datasets: [{
     //             label: 'Alertas',
     //             data: [10, 7, 6, 5, 1],
-    //             backgroundColor: 'rgb(255,44,44)',
+    //             backgroundColor: 'rgb(255, 44, 44)',
     //             borderColor: 'white',
     //             borderWidth: 2
     //         }]
@@ -187,7 +222,7 @@
     // });
 
     // new Chart(chartIdentificacao, {
-    //     type: 'doughnut',
+    //     type: 'line',
     //     data: {
     //         labels: ['12:00',
     //             '02:00',
@@ -325,6 +360,7 @@
     // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+
     // function plotarGrafico(resposta, idAquario) {
 
     //     console.log('iniciando plotagem do gráfico...');
@@ -391,17 +427,16 @@
 
     //     fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
     //         if (response.ok) {
-    //             response.json().then(function (novoRegistro) {
+    //             response.json().then(function (resposta) {
 
     //                 obterdados(idAquario);
     //                 // alertar(novoRegistro, idAquario);
-    //                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
     //                 console.log(`Dados atuais do gráfico:`);
     //                 console.log(dados);
 
     //                 let avisoCaptura = document.getElementById(`avisoCaptura${idAquario}`)
     //                 avisoCaptura.innerHTML = ""
-
 
     //                 if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
     //                     console.log("---------------------------------------------------------------")
@@ -437,4 +472,5 @@
     //         });
 
     // }
+
 </script>
