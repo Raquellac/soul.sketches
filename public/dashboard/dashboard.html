@@ -128,7 +128,17 @@
     },
         options: {
         maintainAspectRatio: false,
-        responsive: true
+        responsive: true,
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        // mantém o layout padrão do tooltip e adiciona o símbolo de porcentagem ao valor
+                        return context.parsed + '%';
+                    }
+                }
+            }
+        }
     }
     });
 
@@ -146,7 +156,17 @@
     },
         options: {
         maintainAspectRatio: false,
-        responsive: true
+        responsive: true,
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        // mantém o layout padrão do tooltip e adiciona o símbolo de porcentagem ao valor
+                        return context.parsed + '%';
+                    }
+                }
+            }
+        }
     }
     });
 
