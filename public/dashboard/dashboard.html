@@ -31,7 +31,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body onload="buscarEscolhas(), buscarIdentificacoes()">
+<body onload="buscarEscolhas(), buscarIdentificacoes(), buscarKpis()">
 
     <div class="janela">
         <div class="header-left">
@@ -80,15 +80,19 @@
                     <div class="info-direction">
                         <div class="kpi">
                             <div class="titulo-grafico">Mais escolhida</div>
+                            <div class="kpi-valor" id="valorKpiMaisEscolhida"></div>
                         </div>
                         <div class="kpi" style="margin-left: -20px;">
                             <div class="titulo-grafico">Total de escolhas</div>
+                            <div class="kpi-valor" id="valorKpiTotalEscolhas"></div>
                         </div>
                         <div class="kpi" style="margin-right: -20px;">
                             <div class="titulo-grafico">Total de respostas</div>
+                            <div class="kpi-valor" id="valorKpiTotalRespostas"></div>
                         </div>
                         <div class="kpi">
                             <div class="titulo-grafico">Maior identificação</div>
+                            <div class="kpi-valor" id="valorKpiMaiorIdentificacao"></div>
                         </div>
                     </div>
                     <div class="info-direction">
@@ -213,6 +217,59 @@
             .then(function (resposta) { return resposta.json(); })
             .then(function (dados) { atualizarGraficoIdentificacoes(dados); })
             .catch(function (error) { console.error(`Erro na obtenção das identificacoes: ${error.message}`); });
+    }
+
+    // Busca os KPIs da dashboard e atualiza os valores na tela
+    function buscarKpis() {
+        // KPI 1 - Mais escolhida: busca a cor mais escolhida no cadastro
+        fetch('/dashboard/kpiMaisEscolhida')
+            .then(function (resposta) { return resposta.json(); })
+            .then(function (dados) { atualizarValorKpiMaisEscolhida(dados); })
+            .catch(function (error) { console.error(`Erro na obtenção do KPI mais escolhida: ${error.message}`); });
+
+        // KPI 2 - Total de escolhas: busca o total geral de escolhas (total de usuários)
+        fetch('/dashboard/kpiTotalEscolhas')
+            .then(function (resposta) { return resposta.json(); })
+            .then(function (dados) { atualizarValorKpiTotalEscolhas(dados); })
+            .catch(function (error) { console.error(`Erro na obtenção do total de escolhas: ${error.message}`); });
+
+        // KPI 3 - Total de respostas: busca o total geral de respostas ao formulário
+        fetch('/dashboard/kpiTotalRespostas')
+            .then(function (resposta) { return resposta.json(); })
+            .then(function (dados) { atualizarValorKpiTotalRespostas(dados); })
+            .catch(function (error) { console.error(`Erro na obtenção do total de respostas: ${error.message}`); });
+
+        // KPI 4 - Maior identificação: busca a cor com a maior identificação
+        fetch('/dashboard/kpiMaiorIdentificacao')
+            .then(function (resposta) { return resposta.json(); })
+            .then(function (dados) { atualizarValorKpiMaiorIdentificacao(dados); })
+            .catch(function (error) { console.error(`Erro na obtenção do maior identificacao: ${error.message}`); });
+    }
+
+    // Atualiza o valor do KPI 1 - Mais escolhida com o nome da cor e a cor correspondente
+    function atualizarValorKpiMaisEscolhida(dados) {
+        var cor = dados[0].cor;
+        var valor = document.getElementById("valorKpiMaisEscolhida");
+        valor.innerHTML = cor.charAt(0).toUpperCase() + cor.slice(1);
+        valor.style.color = obterCor(cor);
+    }
+
+    // Atualiza o valor do KPI 2 - Total de escolhas com o total vindo do banco
+    function atualizarValorKpiTotalEscolhas(dados) {
+        document.getElementById("valorKpiTotalEscolhas").innerHTML = dados[0].total;
+    }
+
+    // Atualiza o valor do KPI 3 - Total de respostas com o total vindo do banco
+    function atualizarValorKpiTotalRespostas(dados) {
+        document.getElementById("valorKpiTotalRespostas").innerHTML = dados[0].total;
+    }
+
+    // Atualiza o valor do KPI 4 - Maior identificação com o nome da cor e a cor correspondente
+    function atualizarValorKpiMaiorIdentificacao(dados) {
+        var cor = dados[0].cor;
+        var valor = document.getElementById("valorKpiMaiorIdentificacao");
+        valor.innerHTML = cor.charAt(0).toUpperCase() + cor.slice(1);
+        valor.style.color = obterCor(cor);
     }
 
     // new Chart(chartEscolha, {

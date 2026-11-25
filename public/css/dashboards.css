@@ -763,3 +763,20 @@ canvas {
   font-weight: bolder;
   color: rgb(131, 131, 170);
 }
+
+/* KPI - VALOR */
+
+.kpi-valor {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #29296b;
+  margin-top: 10px;
+}
+
+/* KPI - ORGANIZAÇÃO: texto fixo no topo, valor na área central */
+
+.kpi {
+  flex-direction: column;
+}
