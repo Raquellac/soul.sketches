@@ -144,10 +144,11 @@ html {
 
 .card-perseveranca {
 
-    background-image: url(../img/perseverei4.png);
+    /* background-image: url(../img/perseverei4.png); */
+    background-image: url(../img/card_pers1.png);
     /* margin-top: -10px; */
     height: 300px;
-    width: 242px;
+    width: 228px;
     background-color: white;
     border-radius: 20px;
 }

@@ -114,9 +114,14 @@
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-
+            
             if (resposta.ok) {
                 console.log(resposta);
+                
+                cardErro.style.display = "block";
+                
+                mensagem_erro.innerHTML =
+                "Login realizado com sucesso! Redirecionando para área do usuário...";
 
                 resposta.json().then(json => {
                     console.log(json);
@@ -126,9 +131,10 @@
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.COR_USUARIO = json.cor;
 
+
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2000); // apenas para exibir o loading
 
                 });
 

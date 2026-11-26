@@ -780,3 +780,12 @@ canvas {
 .kpi {
   flex-direction: column;
 }
+
+.cores{
+    color:#e26b6b;
+    color:#f39a5e;
+    color:#f1c85e;
+    color:#6abd7c;
+    color:#7e87df;
+    color:#b97dd3;
+}
