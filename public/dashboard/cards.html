@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirMensagemPersonalizada(), atualizacaoPeriodica()">
+<body onload="validarSessao(), exibirMensagemPersonalizada()">
 
     <div class="janela">
 
@@ -73,7 +73,7 @@
                 </div>
                 <div class="info-perfil">
                     <div class="conteudo-perfil">
-                        <span class="corpo-texto">Sua cor escolhida foi...</span>
+                        <span class="corpo-texto">Sua cor <b>escolhida</b> foi...</span>
                         <div class="corpo-texto" id="mensagemUsuario" style="margin-top: -20px;"></div>
                     </div>
                 </div>
@@ -143,10 +143,10 @@
             <div>
             <h3 style="color: ${mensagem.cor};">${mensagem.titulo}</h3>
             <p>${mensagem.texto}</p>
-        </div>
-        <img src="${mensagem.imagem}" alt="${mensagem.titulo}" style="width: fit-content; height: fit-content; border-radius: 8px; object-fit: cover;">
-    </div>
-`;
+            </div>
+            <img src="${mensagem.imagem}" alt="${mensagem.titulo}" style="width: fit-content; height: fit-content; border-radius: 8px; object-fit: cover;">
+            </div>
+        `;
     } else {
         elementoMensagem.innerHTML = ``;
     }

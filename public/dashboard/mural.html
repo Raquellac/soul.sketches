@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body onload="onloadEsconder()" style="background-color: #161618;">
+<body onload="onloadEsconder(), exibirMensagemPersonalizada()" style="background-color: #161618;">
 <!-- validarSessao(), atualizarFeed() - estavam acima -->
 
     <div class="janela">
@@ -251,6 +251,12 @@
                     </div>
                 </div>
                 </div>
+                <!-- <div class="info-perfil" style="margin-top: 30px; padding: 30px; margin-bottom: -20px;">
+                    <div class="conteudo-perfil">
+                        <span class="corpo-texto">A cor que você mais se <b>identificou</b> foi...</span>
+                        <div class="corpo-texto" id="mensagemUsuario" style="margin-top: -50px;"></div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -258,6 +264,45 @@
 </html>
 
 <script>
+
+    let cores = {
+        "vermelho": {
+        "titulo": "Vermelho",
+        "texto": "Na arte, o vermelho é frequentemente associado à paixão, ao amor, à intensidade e à força. Sua presença transmite energia e chama a atenção, podendo representar tanto sentimentos acolhedores quanto conflitos, perigo e impulsividade.",
+        "cor": "#b50505",
+        "imagem": "../img/vermelho_art.jpg"
+        },
+        "laranja": {
+        "titulo": "Laranja",
+        "texto": "O laranja transmite entusiasmo, criatividade e vitalidade. Na arte, é utilizado para despertar sensações de calor, movimento e espontaneidade. Sua combinação entre a intensidade do vermelho e a luminosidade do amarelo cria uma atmosfera acolhedora e expressiva.",
+        "cor": "#f2680c",
+        "imagem": "../img/laranja_art2.jpg"
+        },
+        "amarelo": {
+        "titulo": "Amarelo",
+        "texto": "O amarelo é frequentemente relacionado à luz, à alegria, à esperança e à criatividade. Na arte, sua luminosidade pode transmitir otimismo e leveza, além de despertar sensações de calor e movimento. Dependendo do contexto, também pode representar inquietação ou alerta.",
+        "cor": "#f7b40a",
+        "imagem": "../img/amarelo_art.jpg"
+        },
+        "verde": {
+        "titulo": "Verde",
+        "texto": "Na arte, o verde costuma representar natureza, renovação, equilíbrio e crescimento. Associado à vida e à tranquilidade, pode transmitir sensações de harmonia e esperança. Suas diferentes tonalidades também permitem explorar contrastes entre frescor, serenidade e mistério.",
+        "cor": "#03660a",
+        "imagem": "../img/verde_art.jpg"
+        },
+        "azul": {
+        "titulo": "Azul",
+        "texto": "O azul é frequentemente associado à serenidade, à introspecção, à confiança e à profundidade. Na arte, suas tonalidades podem transmitir tranquilidade e contemplação, mas também melancolia e solidão. É uma cor que permite explorar sentimentos sutis e atmosferas contemplativas.",
+        "cor": "#2c3bc7",
+        "imagem": "../img/azul_art.jpg"
+        },
+        "roxo": {
+        "titulo": "Roxo",
+        "texto": "O roxo é frequentemente relacionado à imaginação, à espiritualidade, ao mistério e à sensibilidade. Na arte, pode representar introspecção e criatividade, despertando uma atmosfera de fantasia e contemplação. Suas tonalidades também permitem expressar delicadeza, profundidade e transformação.",
+        "cor": "#7807a8",
+        "imagem": "../img/roxo_art.jpg"
+        }
+    }
     
     function onloadEsconder() {
 
@@ -320,9 +365,12 @@
 
         let menos = menosSelecionado.value
 
-        //pegando o id do usuário para preencher a devida fk_usuario
+        // //pegando o id do usuário para preencher a devida fk_usuario
 
         let fk_usuario = sessionStorage.ID_USUARIO;
+
+        // sessionStorage.COR_IDENTIFICADA = mais;
+        // exibirMensagemPersonalizada(mais);
 
         //enviar para o BD
 
@@ -352,6 +400,10 @@
                 setTimeout(function () {
                     document.getElementById("esconderForm").style.display = "none";
                     }, 2000);
+
+            // sessionStorage.COR_IDENTIFICADA = mais;
+            // exibirMensagemPersonalizada(mais);
+
             } else {
             throw "Houve um erro ao tentar realizar o envio!";
             }
@@ -371,6 +423,28 @@
         return false;
 
     }
+
+//     function exibirMensagemPersonalizada(cor) {
+//     // var corEscolhida = cor || sessionStorage.COR_USUARIO;
+//     var corEscolhida = cor || sessionStorage.COR_IDENTIFICADA || sessionStorage.COR_USUARIO;
+//     var mensagem = cores[corEscolhida];
+
+//     var elementoMensagem = document.getElementById("mensagemUsuario");
+
+//     if (mensagem) {
+//         elementoMensagem.innerHTML = `
+//             <div style="display: flex; align-items: center; gap: 80px;">
+//             <div>
+//             <h3 style="color: ${mensagem.cor};">${mensagem.titulo}</h3>
+//             <p>${mensagem.texto}</p>
+//             </div>
+//             <img src="${mensagem.imagem}" alt="${mensagem.titulo}" style="width: fit-content; height: fit-content; border-radius: 8px; object-fit: cover;">
+//             </div>
+//         `;
+//     } else {
+//         elementoMensagem.innerHTML = ``;
+//     }
+// }
 
     // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
